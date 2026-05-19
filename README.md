@@ -26,7 +26,7 @@ Specializing in cloud infrastructure hardening and advanced threat detection.
 ---
 
 ### 📫 Let's Connect
-* **LinkedIn:** [Prasanna Dabi]([https://linkedin.com/in/prasanna-dabi](https://www.linkedin.com/in/prasanna-dabi-27b6a513a/))
+* **LinkedIn:** [Prasanna Dabi](https://www.linkedin.com/in/prasanna-dabi-27b6a513a/)
 
 ---
 *"Securing the cloud, one exploit at a time."*
