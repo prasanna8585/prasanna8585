@@ -12,6 +12,36 @@ Specializing in cloud infrastructure hardening and advanced threat detection.
 * **Official Advisory:** [GHSA-hm6f-x2ww-p497](https://github.com/advisories/GHSA-hm6f-x2ww-p497)
 * **Impact:** Identified a critical flaw allowing full host compromise via reverse shell.
 
+### 🏆 Featured Security Discovery: CVE-2026-12681
+* **Project:** Google go-attestation Library
+* **Vulnerability:** Improper Input Validation / TPM Hash Injection - CVSS 8.9
+* **Official Advisory:** [GHSA-9r4w-jg96-92mv](https://github.com/google/go-attestation/security/advisories/GHSA-9r4w-jg96-92mv)
+* **Impact:** Discovered a critical logic flaw in `parseEfiSignatureList()` where a crafted TPM event log can inject arbitrary SHA256 hashes into a verifier's trusted database, causing a compromised boot state to be falsely accepted.
+
+### 🚀 Notable Security Discovery: xpub Change-Index Amplification
+* **Project:** Trezor Blockbook Service
+* **Vulnerability:** Unauthenticated Resource Exhaustion (DoS)
+* **Official Advisory:** [Trezor Security Advisory](https://trezor.io/vulnerability/unauthenticated-remote-do-s-via-xpub-change-index-amplification)
+* **Impact:** Identified an amplification flaw where uncapped change indexes in xpub descriptors forced excessive database lookups and address derivations, filling a global in-memory cache and forcing a complete Out-of-Memory (OOM) server crash.
+
+### 🚀 Notable Security Discovery: Unauthenticated Remote Memory Exhaustion
+* **Project:** Trezor Blockbook Service
+* **Vulnerability:** Denial of Service (DoS) via Unbounded Timestamp Array
+* **Official Advisory:** [Trezor Security Portal](https://trezor.io/vulnerability/unauthenticated-remote-do-s-via-xpub-change-index-amplification)
+* **Impact:** Found a flaw in the historical price API allowing unauthenticated remote attackers to pass massive, unbounded timestamp arrays to trigger rapid server memory exhaustion.
+
+### 🚀 Notable Security Discovery: eBPF DDoS Mitigation Logic Failure
+* **Project:** PowerDNS dnsdist
+* **Vulnerability:** Logic Flaw / Denial of Service (DoS) Mitigation Bypass
+* **Official Advisory:** [Pull Request #17287](https://github.com/PowerDNS/pdns/pull/17287)
+* **Impact:** Discovered a critical logic error in `bpf-filter.cc` where range-based subnet evaluation queries incorrectly triggered a runtime error, completely breaking active eBPF-based blocking mechanisms and leaving the DNS infrastructure exposed during traffic spikes.
+
+### 🚀 Notable Security Discovery: REST API Permission Boundary Bypass
+* **Project:** PowerDNS dnsdist
+* **Vulnerability:** Authorization Bypass / Improper Access Control
+* **Official Advisory:** [Pull Request #17291](https://github.com/PowerDNS/pdns/pull/17291)
+* **Impact:** Identified a security boundary issue where restricted "Read-Only" API tokens could bypass endpoint separation rules to execute unintended state-changing memory actions (such as purging the global packet cache and exploiting CORS misconfigurations), breaking the isolation between read and write access keys.
+
 ---
 
 ### 🛠️ Technical Stack
