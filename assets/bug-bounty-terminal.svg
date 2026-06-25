@@ -1,42 +1,51 @@
-
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 320" width="100%" height="100%">
+  <style>
+    .terminal { font-family: 'Courier New', Courier, monospace; fill: #00ff66; font-size: 14px; }
+    .header { fill: #aaaaaa; font-size: 12px; }
+    .accent { fill: #00bcff; }
+    .critical { fill: #ff3333; font-weight: bold; }
+    .cursor { fill: #00ff66; animation: blink 1s infinite; }
+    
+    @keyframes blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+    @keyframes type { from { width: 0; } to { width: 100%; } }
+    
+    .line { white-space: nowrap; overflow: hidden; border-right: 2px solid transparent; }
+    .l1 { animation: type 1s steps(40) 0s 1 normal both; }
+    .l2 { animation: type 1s steps(40) 1s 1 normal both; }
+    .l3 { animation: type 1s steps(40) 2s 1 normal both; }
+    .l4 { animation: type 1s steps(40) 3s 1 normal both; }
+    .l5 { animation: type 1s steps(40) 4s 1 normal both; }
+  </style>
   
+  <rect width="600" height="320" rx="10" fill="#0d1117" stroke="#30363d" stroke-width="2"/>
+  <rect width="600" height="30" rx="10" fill="#161b22"/>
+  <circle cx="20" cy="15" r="6" fill="#ff5f56"/>
+  <circle cx="40" cy="15" r="6" fill="#ffbd2e"/>
+  <circle cx="60" cy="15" r="6" fill="#27c93f"/>
+  <text x="300" y="20" text-anchor="middle" class="header">prasanna8585@security-ops:~</text>
   
-  
-  
-  
-  
-  
-  
-  prasanna8585@security-ops:~
-  
-  
-  
+  <g class="terminal" transform="translate(25, 65)">
+    <svg x="0" y="0" width="550" height="25" class="line l1">
+      <text x="0" y="18">> ./initialize_hunter.sh --verbose</text>
+    </svg>
     
+    <svg x="0" y="30" width="550" height="25" class="line l2">
+      <text x="0" y="18">[+] Target Platforms Connected: <tspan class="accent">HackerOne | Bugcrowd | YesWeHack</tspan></text>
+    </svg>
     
-      > ./initialize_hunter.sh --verbose
+    <svg x="0" y="60" width="550" height="25" class="line l3">
+      <text x="0" y="18">[+] Core Specialization: <tspan class="accent">Web App, Cloud Infrastructure &amp; Core APIs</tspan></text>
+    </svg>
     
+    <svg x="0" y="90" width="550" height="75" class="line l4">
+      <text x="0" y="18">[🔥] Latest Findings:</text>
+      <text x="25" y="38" class="critical">• CVE-2026-25212 [Percona RCE - CVSS 9.9]</text>
+      <text x="25" y="58" class="critical">• CVE-2026-12681 [Google TPM Bypass - CVSS 8.9]</text>
+    </svg>
     
-    
-    
-      [+] Target Platforms Connected: HackerOne | Bugcrowd | YesWeHack
-    
-    
-    
-    
-      [+] Core Specialization: Web App, Cloud Infrastructure & Core APIs
-    
-    
-    
-    
-      [🔥] Latest Findings:
-      • CVE-2026-25212 [Percona RCE - CVSS 9.9]
-      • CVE-2026-12681 [Google TPM Bypass - CVSS 8.9]
-    
-    
-    
-    
-      [+] Recon Automation Status: ONLINE (Monitoring Active...)
-      
-    
-  
-
+    <svg x="0" y="175" width="550" height="25" class="line l5">
+      <text x="0" y="18">[+] Recon Automation Status: <tspan fill="#27c93f">ONLINE (Monitoring Active...)</tspan></text>
+      <rect x="445" y="4" width="10" height="16" class="cursor"/>
+    </svg>
+  </g>
+</svg>
