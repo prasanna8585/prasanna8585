@@ -44,6 +44,8 @@ Specializing in cloud infrastructure hardening and advanced threat detection.
 
 ---
 
+![Bug Bounty Terminal Dashboard](assets/bug-bounty-terminal.svg?v=1)
+
 ### 🛠️ Technical Stack
 <p align="left">
   <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
@@ -64,9 +66,6 @@ Specializing in cloud infrastructure hardening and advanced threat detection.
 <p align="left">
   <img src="https://komarev.com/ghpvc/?username=prasanna8585&label=Profile%20views&color=0e75b6&style=flat" alt="prasanna8585" />
 </p>
-
-
-![Bug Bounty Terminal Dashboard](assets/bug-bounty-terminal.svg?v=1)
 
 ![Bug Bounty Target Radar](https://raw.githubusercontent.com/prasanna8585/prasanna8585/master/assets/bug-bounty-radar.svg)
 <!--
