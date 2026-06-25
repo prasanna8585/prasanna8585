@@ -66,7 +66,7 @@ Specializing in cloud infrastructure hardening and advanced threat detection.
 </p>
 
 
-![Bug Bounty Terminal Dashboard](https://raw.githubusercontent.com/prasanna8585/prasanna8585/main/assets/bug-bounty-terminal.svg)
+![Bug Bounty Terminal Dashboard](assets/bug-bounty-terminal.svg?v=1)
 <!--
 **prasanna8585/prasanna8585** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
