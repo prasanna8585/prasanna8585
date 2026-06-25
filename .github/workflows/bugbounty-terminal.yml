@@ -1,0 +1,87 @@
+name: Generate Bug Bounty Terminal
+
+on:
+  schedule:
+    - cron: "0 0 * * *" # Automatically updates every day at midnight
+  workflow_dispatch: # Allows you to run it manually anytime
+  push:
+    branches:
+      - master
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Generate Terminal SVG
+        run: |
+          python - <<'EOF'
+          import os
+
+          svg_content = """
+            
+            
+            
+            
+            
+            
+            
+            
+            prasanna8585@security-ops:~
+            
+            
+            
+              
+              
+                > ./initialize_hunter.sh --verbose
+              
+              
+              
+              
+                [+] Target Platforms Connected: HackerOne | Bugcrowd | YesWeHack
+              
+              
+              
+              
+                [+] Core Specialization: Web App, Cloud Infrastructure & Core APIs
+              
+              
+              
+              
+                [🔥] Latest Findings:
+                • CVE-2026-25212 [Percona RCE - CVSS 9.9]
+                • CVE-2026-12681 [Google TPM Bypass - CVSS 8.9]
+              
+              
+              
+              
+                [+] Recon Automation Status: ONLINE (Monitoring Active...)
+                
+              
+            
+          
+          """
+          
+          os.makedirs('assets', exist_ok=True)
+          with open('assets/bug-bounty-terminal.svg', 'w') as f:
+              f.write(svg_content)
+          print("Terminal SVG successfully generated!")
+          EOF
+
+      - name: Commit and Push Generated Assets
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add assets/bug-bounty-terminal.svg
+          git commit -m "Automated update: Bug Bounty Terminal Graphic" || exit 0
+          git push
