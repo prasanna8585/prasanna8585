@@ -1,74 +1,56 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 320" width="100%" height="100%">
-  <style>
-    .console { font-family: 'Courier New', Courier, monospace; fill: #00ff66; font-size: 13px; }
-    .header { fill: #aaaaaa; font-size: 12px; font-family: monospace; }
-    .radar-line { stroke: #00ff66; stroke-width: 1; opacity: 0.2; }
-    .radar-sweep { fill: none; stroke: url(#sweep-gradient); stroke-width: 2; transform-origin: 110px 175px; animation: sweep 4s linear infinite; }
-    .blip-1 { fill: #ff3333; animation: pulse 2s infinite 0.5s; }
-    .blip-2 { fill: #00bcff; animation: pulse 1.5s infinite 1.2s; }
-    
-    @keyframes sweep { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-    @keyframes pulse { 0%, 100% { opacity: 0.2; r: 2; } 50% { opacity: 1; r: 5; filter: drop-shadow(0 0 3px #ff3333); } }
-    @keyframes type { from { width: 0; } to { width: 100%; } }
-    
-    .text-line { white-space: nowrap; overflow: hidden; border-right: 2px solid transparent; }
-    .t1 { animation: type 1s steps(30) 0s 1 normal both; }
-    .t2 { animation: type 1s steps(30) 1s 1 normal both; }
-    .t3 { animation: type 1s steps(30) 2s 1 normal both; }
-    .t4 { animation: type 1s steps(30) 3s 1 normal both; }
-    .t5 { animation: type 1s steps(30) 4s 1 normal both; }
-  </style>
-  
-  <defs>
-    <linearGradient id="sweep-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#00ff66" stop-opacity="1"/>
-      <stop offset="50%" stop-color="#00ff66" stop-opacity="0.3"/>
-      <stop offset="100%" stop-color="#00ff66" stop-opacity="0"/>
-    </linearGradient>
-  </defs>
 
-  <rect width="620" height="320" rx="10" fill="#0d1117" stroke="#30363d" stroke-width="2"/>
-  <rect width="620" height="30" rx="10" fill="#161b22"/>
-  <circle cx="20" cy="15" r="6" fill="#ff5f56"/>
-  <circle cx="40" cy="15" r="6" fill="#ffbd2e"/>
-  <circle cx="60" cy="15" r="6" fill="#27c93f"/>
-  <text x="310" y="20" text-anchor="middle" class="header">BUG_HUNTER_RECON_GRID // ACTIVE_SCAN</text>
   
-  <g transform="translate(10, 0)">
-    <circle cx="110" cy="175" r="90" fill="#0b2414" fill-opacity="0.2" stroke="#00ff66" stroke-width="1" stroke-opacity="0.3"/>
-    <circle cx="110" cy="175" r="65" fill="none" stroke="#00ff66" stroke-width="1" stroke-opacity="0.2"/>
-    <circle cx="110" cy="175" r="40" fill="none" stroke="#00ff66" stroke-width="1" stroke-opacity="0.1"/>
-    <line x1="20" y1="175" x2="200" y2="175" class="radar-line" />
-    <line x1="110" y1="85" x2="110" y2="265" class="radar-line" />
-    
-    <circle cx="70" cy="130" r="4" class="blip-1"/>
-    <circle cx="150" cy="210" r="3" class="blip-2"/>
-    <circle cx="130" cy="120" r="4" class="blip-1"/>
-    
-    <line x1="110" y1="175" x2="110" y2="85" class="radar-sweep" />
-  </g>
   
-  <g class="console" transform="translate(240, 65)">
-    <svg x="0" y="0" width="360" height="25" class="text-line t1">
-      <text x="0" y="18" fill="#8b949e">[STG] Target scope initialization...</text>
-    </svg>
+  
     
-    <svg x="0" y="30" width="360" height="25" class="text-line t2">
-      <text x="0" y="18">[RECON] Discovering subdomains &amp; API paths</text>
-    </svg>
+      
+      
+      
     
-    <svg x="0" y="60" width="360" height="25" class="text-line t3">
-      <text x="0" y="18" fill="#00bcff">[FUZZ] Mapping logical parameters</text>
-    </svg>
+  
+
+  
+  
+  
+  
+  
+  BUG_HUNTER_RECON_GRID // ACTIVE_SCAN
+  
+  
     
-    <svg x="0" y="90" width="360" height="45" class="text-line t4">
-      <text x="0" y="18" fill="#ffbd2e">[!] ALERT: Parameter vulnerability confirmed</text>
-      <text x="20" y="36" fill="#ff3333">↳ Exploit payload deployed successfully.</text>
-    </svg>
     
-    <svg x="0" y="150" width="360" height="45" class="text-line t5">
-      <text x="0" y="18" fill="#27c93f">[+] STATUS: Bug captured &amp; report filed</text>
-      <text x="20" y="36" fill="#8b949e">↳ Monitoring next asset pool...</text>
-    </svg>
-  </g>
-</svg>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
+  
+  
+    
+      [STG] Target scope initialization...
+    
+    
+    
+      [RECON] Discovering subdomains & API paths
+    
+    
+    
+      [FUZZ] Mapping logical parameters [IDOR/XSS]
+    
+    
+    
+      [⚠️] ALERT: Parameter vulnerability confirmed
+      ↳ Exploit payload deployed successfully.
+    
+    
+    
+      [✔] STATUS: Bug captured & report filed
+      ↳ Monitoring next asset pool...
+    
+  
+
