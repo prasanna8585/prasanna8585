@@ -65,6 +65,8 @@ Specializing in cloud infrastructure hardening and advanced threat detection.
   <img src="https://komarev.com/ghpvc/?username=prasanna8585&label=Profile%20views&color=0e75b6&style=flat" alt="prasanna8585" />
 </p>
 
+
+![Bug Bounty Terminal Dashboard](https://raw.githubusercontent.com/prasanna8585/prasanna8585/master/assets/bug-bounty-terminal.svg)
 <!--
 **prasanna8585/prasanna8585** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
