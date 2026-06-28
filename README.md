@@ -6,17 +6,23 @@ Specializing in cloud infrastructure hardening and advanced threat detection.
 
 ---
 
-### 🏆 Featured Security Discovery: CVE-2026-25212
-* **Project:** Percona Monitoring and Management (PMM)
-* **Vulnerability:** Authenticated Remote Code Execution (RCE) - CVSS 9.9
-* **Official Advisory:** [GHSA-hm6f-x2ww-p497](https://github.com/advisories/GHSA-hm6f-x2ww-p497)
-* **Impact:** Identified a critical flaw allowing full host compromise via reverse shell.
+### 🏆 Featured Security Discovery: CVE-2026-46602
+* **Project:** Go Core Image Packages (`golang.org/x/image/tiff`)
+* **Vulnerability:** Unbounded Memory Allocation / Resource Exhaustion - CVSS 7.5
+* **Official Advisory:** [GO-2026-5062](https://pkg.go.dev/vuln/GO-2026-5062)
+* **Impact:** Identified a resource validation flaw where processing maliciously crafted tiled TIFF images forces immediate Out of Memory (OOM) errors and Denial of Service (DoS).
 
 ### 🏆 Featured Security Discovery: CVE-2026-12681
 * **Project:** Google go-attestation Library
 * **Vulnerability:** Improper Input Validation / TPM Hash Injection - CVSS 8.9
 * **Official Advisory:** [GHSA-9r4w-jg96-92mv](https://github.com/google/go-attestation/security/advisories/GHSA-9r4w-jg96-92mv)
 * **Impact:** Discovered a critical logic flaw in `parseEfiSignatureList()` where a crafted TPM event log can inject arbitrary SHA256 hashes into a verifier's trusted database, causing a compromised boot state to be falsely accepted.
+
+### 🏆 Featured Security Discovery: CVE-2026-25212
+* **Project:** Percona Monitoring and Management (PMM)
+* **Vulnerability:** Authenticated Remote Code Execution (RCE) - CVSS 9.9
+* **Official Advisory:** [GHSA-hm6f-x2ww-p497](https://github.com/advisories/GHSA-hm6f-x2ww-p497)
+* **Impact:** Identified a critical flaw allowing full host compromise via reverse shell.
 
 ### 🚀 Notable Security Discovery: xpub Change-Index Amplification
 * **Project:** Trezor Blockbook Service
