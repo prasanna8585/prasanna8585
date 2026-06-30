@@ -33,13 +33,13 @@ Specializing in cloud infrastructure hardening and advanced threat detection.
 ### 🚀 Notable Security Discovery: xpub Change-Index Amplification
 * **Project:** Trezor Blockbook Service
 * **Vulnerability:** Unauthenticated Resource Exhaustion (DoS)
-* **Official Advisory:** [Trezor Security Advisory](https://trezor.io/vulnerability/unauthenticated-remote-do-s-via-xpub-change-index-amplification)
+* **Official Advisory:** [Trezor Security](https://trezor.io/vulnerability/unauthenticated-remote-do-s-via-xpub-change-index-amplification)
 * **Impact:** Identified an amplification flaw where uncapped change indexes in xpub descriptors forced excessive database lookups and address derivations, filling a global in-memory cache and forcing a complete Out-of-Memory (OOM) server crash.
 
 ### 🚀 Notable Security Discovery: Unauthenticated Remote Memory Exhaustion
 * **Project:** Trezor Blockbook Service
 * **Vulnerability:** Denial of Service (DoS) via Unbounded Timestamp Array
-* **Official Advisory:** [Trezor Security Portal](https://trezor.io/vulnerability/unauthenticated-remote-do-s-via-xpub-change-index-amplification)
+* **Official Advisory:** [Trezor Security](https://trezor.io/vulnerability/unauthenticated-remote-do-s-via-xpub-change-index-amplification)
 * **Impact:** Found a flaw in the historical price API allowing unauthenticated remote attackers to pass massive, unbounded timestamp arrays to trigger rapid server memory exhaustion.
 
 ### 🚀 Notable Security Discovery: eBPF DDoS Mitigation Logic Failure
