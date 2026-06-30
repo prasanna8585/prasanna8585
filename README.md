@@ -9,7 +9,7 @@ Specializing in cloud infrastructure hardening and advanced threat detection.
 ### 🏆 Featured Security Discovery: CVE-2026-46602
 * **Project:** Go Core Image Packages (`golang.org/x/image/tiff`)
 * **Vulnerability:** Unbounded Memory Allocation / Resource Exhaustion - CVSS 7.5
-* **Official Advisory:** [GO-2026-5062](https://pkg.go.dev/vuln/GO-2026-5062)
+* **Official Advisory:** [GO-2026-5062](https://pkg.go.dev/vuln/GO-2026-5062) | [GHSA-pwfv-328h-75x9](https://github.com/advisories/GHSA-pwfv-328h-75x9)
 * **Impact:** Identified a resource validation flaw where processing maliciously crafted tiled TIFF images forces immediate Out of Memory (OOM) errors and Denial of Service (DoS).
 
 ### 🏆 Featured Security Discovery: CVE-2026-12681
