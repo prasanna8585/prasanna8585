@@ -24,6 +24,12 @@ Specializing in cloud infrastructure hardening and advanced threat detection.
 * **Official Advisory:** [GHSA-hm6f-x2ww-p497](https://github.com/advisories/GHSA-hm6f-x2ww-p497)
 * **Impact:** Identified a critical flaw allowing full host compromise via reverse shell.
 
+### 🚀 Notable Security Discovery: gVisor Mount Isolation Bypass
+* **Project:** Google gVisor Container Sandbox (`google/gvisor`)
+* **Vulnerability:** Mount Namespace Security / Container Isolation Bypass
+* **Official Advisory:** [Issue #13481](https://github.com/google/gvisor/issues/13481) | [Pull Request #13482](https://github.com/google/gvisor/pull/13482)
+* **Impact:** Discovered a sandbox isolation flaw where `open_tree(OPEN_TREE_CLONE)` incorrectly succeeded on `MNT_DETACH` unmounted paths (which strictly returns `EINVAL` on native Linux). This allowed a user with container root privileges to clone and re-attach an intentionally isolated filesystem via `move_mount(2)`, completely breaking container containment boundaries.
+
 ### 🚀 Notable Security Discovery: xpub Change-Index Amplification
 * **Project:** Trezor Blockbook Service
 * **Vulnerability:** Unauthenticated Resource Exhaustion (DoS)
