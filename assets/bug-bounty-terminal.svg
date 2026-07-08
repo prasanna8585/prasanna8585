@@ -41,6 +41,7 @@
       <text x="0" y="18">[🔥] Latest Findings:</text>
       <text x="25" y="38" class="critical">• CVE-2026-25212 [Percona RCE - CVSS 9.9]</text>
       <text x="25" y="58" class="critical">• CVE-2026-12681 [Google TPM Bypass - CVSS 8.9]</text>
+      <text x="25" y="58" class="critical">• CVE-2026-46602 [Resource Exhaustion - CVSS 7.5]</text>
     </svg>
     
     <svg x="0" y="175" width="550" height="25" class="line l5">
