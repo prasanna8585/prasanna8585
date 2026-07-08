@@ -24,6 +24,12 @@ Specializing in cloud infrastructure hardening and advanced threat detection.
 * **Official Advisory:** [GHSA-hm6f-x2ww-p497](https://github.com/advisories/GHSA-hm6f-x2ww-p497)
 * **Impact:** Identified a critical flaw allowing full host compromise via reverse shell.
 
+### 🚀 Notable Security Discovery: Go SSH Client Terminal Escape Sequence Injection
+* **Project:** Go Extended Cryptography Library (`golang/go` / `x/crypto`)
+* **Vulnerability:** Improper Input Sanitization / ANSI Escape Sequence Injection
+* **Official Advisory:** [Issue #80302](https://github.com/golang/go/issues/80302)
+* **Impact:** Discovered a vulnerability in the `ssh.BannerDisplayStderr()` helper function where pre-authentication SSH banners were streamed directly to `os.Stderr` without data sanitization. A malicious or compromised server could inject arbitrary ANSI escape codes to execute terminal spoofing, manipulate clipboards, or potentially exploit underlying terminal emulator vulnerabilities on the client side.
+
 ### 🚀 Notable Security Discovery: gVisor Mount Isolation Bypass
 * **Project:** Google gVisor Container Sandbox (`google/gvisor`)
 * **Vulnerability:** Mount Namespace Security / Container Isolation Bypass
