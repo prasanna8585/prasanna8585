@@ -61,6 +61,11 @@ Specializing in cloud infrastructure hardening and advanced threat detection.
 * **Impact:** Identified a security boundary issue where restricted "Read-Only" API tokens could bypass endpoint separation rules to execute unintended state-changing memory actions (such as purging the global packet cache and exploiting CORS misconfigurations), breaking the isolation between read and write access keys.
 
 ---
+## 🛠️ Active SecOps Monitoring
+
+<p align="center">
+  <img src="./terminal.svg" alt="Voltron Security Operations Terminal" width="600" />
+</p>
 
 ![Bug Bounty Terminal Dashboard](assets/bug-bounty-terminal.svg?v=1)
 
