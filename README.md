@@ -63,10 +63,6 @@ Specializing in cloud infrastructure hardening and advanced threat detection.
 ---
 ## 🛠️ Active SecOps Monitoring
 
-<p align="center">
-  <img src="./terminal.svg" alt="Voltron Security Operations Terminal" width="600" />
-</p>
-
 ![Bug Bounty Terminal Dashboard](assets/bug-bounty-terminal.svg?v=1)
 
 ### 🛠️ Technical Stack
