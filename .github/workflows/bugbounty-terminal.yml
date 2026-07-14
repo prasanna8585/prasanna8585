@@ -2,7 +2,7 @@ name: Generate Bug Bounty Terminal
 
 on:
   schedule:
-    - cron: '0 0 * * *' # Runs daily
+    - cron: '0 0 * * *' # Runs daily at midnight
   push:
     branches:
       - master
@@ -13,22 +13,18 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4 # Upgraded to clear Node deprecation warnings
+        uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v5 # Upgraded to clear Node deprecation warnings
+        uses: actions/setup-python@v5
         with:
           python-version: '3.x'
 
-      # OPTION A: If your Python script is inline inside the workflow file, use this block:
-      # (If you are calling an external script like 'python generate.py', you can skip this part 
-      # and just update the data array in that script file instead!)
-      变换 name: Generate Updated Terminal SVG
+      - name: Generate Updated Terminal SVG
         run: |
           cat << 'EOF' > generate_svg.py
           import os
 
-          # Updated vulnerability database matrix
           vulns = [
               {"id": "CVE-2026-25212", "target": "Percona PMM Authenticated RCE", "sev": "9.9 CRIT", "style": "critical"},
               {"id": "CVE-2026-12681", "target": "Google go-attestation TPM Injection", "sev": "8.9 HIGH", "style": "high"},
@@ -39,7 +35,6 @@ jobs:
               {"id": "PowerDNS",       "target": "eBPF DDoS Mitigation Logic Flaw", "sev": "Logic Flaw", "style": "info"}
           ]
 
-          # Expanded height to 395px to prevent collision with the sync confirmation message
           svg_content = """<svg xmlns="http://www.w3.org/2000/svg" width="600" height="395" viewBox="0 0 600 395">
             <defs>
               <style>
@@ -79,7 +74,9 @@ jobs:
             </g>
           </svg>"""
 
-          with open("terminal.svg", "w") as f:
+          # Make sure the file drops correctly into the assets subfolder
+          os.makedirs("assets", exist_ok=True)
+          with open("assets/bug-bounty-terminal.svg", "w") as f:
               f.write(svg_content)
           EOF
           python generate_svg.py
@@ -88,5 +85,5 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add terminal.svg
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Update terminal graphics with latest CVE configurations" && git push)
+          git add assets/bug-bounty-terminal.svg
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Update automated terminal SVG assets matrix" && git push)
