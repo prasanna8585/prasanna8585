@@ -24,6 +24,12 @@ Specializing in cloud infrastructure hardening and advanced threat detection.
 * **Official Advisory:** [GHSA-hm6f-x2ww-p497](https://github.com/advisories/GHSA-hm6f-x2ww-p497)
 * **Impact:** Identified a critical flaw allowing full host compromise via reverse shell.
 
+### 🏆 Featured Security Discovery: GHSA-3238-pp48-6m3j
+* **Project:** Google Project Oak
+* **Vulnerability:** Trusted Execution Environment (TEE) Attestation Bypass
+* **Official Advisory:** [GHSA-3238-pp48-6m3j](https://github.com/project-oak/oak/security/advisories/GHSA-3238-pp48-6m3j)
+* **Impact:** Discovered a critical validation flaw enabling a complete bypass of enclave security measurements, allowing untrusted hosts to spoof remote attestation states.
+
 ### 🚀 Notable Security Discovery: Go SSH Client Terminal Escape Sequence Injection
 * **Project:** Go Extended Cryptography Library (`golang/go` / `x/crypto`)
 * **Vulnerability:** Improper Input Sanitization / ANSI Escape Sequence Injection
