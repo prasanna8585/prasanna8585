@@ -2,95 +2,91 @@ name: Generate Bug Bounty Terminal
 
 on:
   schedule:
-    - cron: "0 0 * * *" 
-  workflow_dispatch: 
+    - cron: '0 0 * * *' # Runs daily
   push:
     branches:
       - master
-      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
+
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4 # Upgraded to clear Node deprecation warnings
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5 # Upgraded to clear Node deprecation warnings
         with:
           python-version: '3.x'
 
-      - name: Generate Terminal SVG
+      # OPTION A: If your Python script is inline inside the workflow file, use this block:
+      # (If you are calling an external script like 'python generate.py', you can skip this part 
+      # and just update the data array in that script file instead!)
+      变换 name: Generate Updated Terminal SVG
         run: |
-          python - <<'EOF'
+          cat << 'EOF' > generate_svg.py
           import os
 
-          svg_content = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 320" width="100%" height="100%">
-            <style>
-              .terminal { font-family: 'Courier New', Courier, monospace; fill: #00ff66; font-size: 14px; }
-              .header { fill: #aaaaaa; font-size: 12px; }
-              .accent { fill: #00bcff; }
-              .critical { fill: #ff3333; font-weight: bold; }
-              .cursor { fill: #00ff66; animation: blink 1s infinite; }
-              
-              @keyframes blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
-              @keyframes type { from { width: 0; } to { width: 100%; } }
-              
-              .line { white-space: nowrap; overflow: hidden; border-right: 2px solid transparent; }
-              .l1 { animation: type 1s steps(40) 0s 1 normal both; }
-              .l2 { animation: type 1s steps(40) 1s 1 normal both; }
-              .l3 { animation: type 1s steps(40) 2s 1 normal both; }
-              .l4 { animation: type 1s steps(40) 3s 1 normal both; }
-              .l5 { animation: type 1s steps(40) 4s 1 normal both; }
-            </style>
-            
-            <rect width="600" height="320" rx="10" fill="#0d1117" stroke="#30363d" stroke-width="2"/>
-            <rect width="600" height="30" rx="10" fill="#161b22"/>
-            <circle cx="20" cy="15" r="6" fill="#ff5f56"/>
-            <circle cx="40" cy="15" r="6" fill="#ffbd2e"/>
-            <circle cx="60" cy="15" r="6" fill="#27c93f"/>
-            <text x="300" y="20" text-anchor="middle" class="header">prasanna8585@security-ops:~</text>
-            
-            <g class="terminal" transform="translate(25, 65)">
-              <svg x="0" y="0" width="550" height="25" class="line l1">
-                <text x="0" y="18">> ./initialize_hunter.sh --verbose</text>
-              </svg>
-              
-              <svg x="0" y="30" width="550" height="25" class="line l2">
-                <text x="0" y="18">[+] Target Platforms Connected: <tspan class="accent">HackerOne | Bugcrowd | YesWeHack</tspan></text>
-              </svg>
-              
-              <svg x="0" y="60" width="550" height="25" class="line l3">
-                <text x="0" y="18">[+] Core Specialization: <tspan class="accent">Web App, Cloud Infrastructure &amp; Core APIs</tspan></text>
-              </svg>
-              
-              <svg x="0" y="90" width="550" height="75" class="line l4">
-                <text x="0" y="18">[🔥] Latest Findings:</text>
-                <text x="25" y="38" class="critical">• CVE-2026-25212 [Percona RCE - CVSS 9.9]</text>
-                <text x="25" y="58" class="critical">• CVE-2026-12681 [Google TPM Bypass - CVSS 8.9]</text>
-              </svg>
-              
-              <svg x="0" y="175" width="550" height="25" class="line l5">
-                <text x="0" y="18">[+] Recon Automation Status: <tspan fill="#27c93f">ONLINE (Monitoring Active...)</tspan></text>
-                <rect x="445" y="4" width="10" height="16" class="cursor"/>
-              </svg>
-            </g>
-          </svg>
-          """
-          
-          os.makedirs('assets', exist_ok=True)
-          with open('assets/bug-bounty-terminal.svg', 'w', encoding='utf-8') as f:
-              f.write(svg_content)
-          print("Terminal SVG successfully generated!")
-          EOF
+          # Updated vulnerability database matrix
+          vulns = [
+              {"id": "CVE-2026-25212", "target": "Percona PMM Authenticated RCE", "sev": "9.9 CRIT", "style": "critical"},
+              {"id": "CVE-2026-12681", "target": "Google go-attestation TPM Injection", "sev": "8.9 HIGH", "style": "high"},
+              {"id": "CVE-2026-46602", "target": "Go x/image TIFF Unbounded Memory", "sev": "7.5 HIGH", "style": "high"},
+              {"id": "GHSA-3238-...",  "target": "Google Project Oak Attestation Bypass", "sev": "TEE Bypass", "style": "high"},
+              {"id": "gVisor (Goog)",  "target": "Container Mount Isolation Bypass", "sev": "Mount Esc", "style": "success"},
+              {"id": "Trezor (BB)",    "target": "xpub Amplification DoS", "sev": "Res Exh", "style": "info"},
+              {"id": "PowerDNS",       "target": "eBPF DDoS Mitigation Logic Flaw", "sev": "Logic Flaw", "style": "info"}
+          ]
 
-      - name: Commit and Push Generated Assets
+          # Expanded height to 395px to prevent collision with the sync confirmation message
+          svg_content = """<svg xmlns="http://www.w3.org/2000/svg" width="600" height="395" viewBox="0 0 600 395">
+            <defs>
+              <style>
+                .terminal { font-family: 'Fira Code', 'SFMono-Regular', Consolas, monospace; font-size: 13px; fill: #c9d1d9; }
+                .prompt { fill: #58a6ff; font-weight: bold; }
+                .cmd { fill: #f0883e; }
+                .success { fill: #3fb950; }
+                .critical { fill: #f85149; font-weight: bold; }
+                .high { fill: #f0883e; }
+                .info { fill: #8b949e; }
+                .border { fill: #21262d; }
+                .title { fill: #8b949e; font-size: 11px; }
+              </style>
+            </defs>
+            <rect width="600" height="395" rx="8" fill="#0d1117" stroke="#30363d" stroke-width="1.5"/>
+            <path d="M0,8 A8,8 0 0,1 8,0 H592 A8,8 0 0,1 600,8 V30 H0 Z" fill="#161b22" stroke="#30363d" stroke-width="0.5"/>
+            <circle cx="20" cy="15" r="6" fill="#f85149" /><circle cx="40" cy="15" r="6" fill="#f0883e" /><circle cx="60" cy="15" r="6" fill="#3fb950" />
+            <text x="300" y="19" class="title" text-anchor="middle">voltron@sec-ops:~ (sh)</text>
+            <g class="terminal" transform="translate(20, 55)">
+              <text x="0" y="0"><tspan class="prompt">voltron@sec-ops:~$</tspan> <tspan class="cmd">./fetch-vulns.sh --disclosed</tspan></text>
+              <text x="0" y="25" class="info">[i] Fetching vulnerability records from active platforms...</text>
+              <text x="0" y="55" class="info">ID             | TARGET / VULNERABILITY                 | SEV / IMPACT</text>
+              <text x="0" y="65" class="border">──────────────────────────────────────────────────────────────────────</text>
+          """
+
+          y_offset = 90
+          for v in vulns:
+              id_pad = v['id'].ljust(14)
+              target_pad = v['target'].ljust(38)
+              svg_content += f'\n    <text x="0" y="{y_offset}"><tspan class="{v["style"]}">{id_pad}</tspan> <tspan xml:space="preserve"> | {target_pad} | </tspan><tspan class="{v["style"]}">{v["sev"]}</tspan></text>'
+              y_offset += 25
+
+          svg_content += f"""
+              <text x="0" y="{y_offset + 15}" class="border">──────────────────────────────────────────────────────────────────────</text>
+              <text x="0" y="{y_offset + 45}" class="success">[✔] {len(vulns)} active advisories synced successfully.</text>
+              <text x="0" y="{y_offset + 75}"><tspan class="prompt">voltron@sec-ops:~$</tspan> <tspan class="cmd">_</tspan></text>
+            </g>
+          </svg>"""
+
+          with open("terminal.svg", "w") as f:
+              f.write(svg_content)
+          EOF
+          python generate_svg.py
+
+      - name: Commit and Push Changes
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add assets/bug-bounty-terminal.svg
-          git commit -m "Automated update: Bug Bounty Terminal Graphic" || exit 0
-          git push
+          git add terminal.svg
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Update terminal graphics with latest CVE configurations" && git push)
