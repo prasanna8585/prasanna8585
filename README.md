@@ -30,6 +30,12 @@ Specializing in cloud infrastructure hardening and advanced threat detection.
 * **Official Advisory:** [GHSA-3238-pp48-6m3j](https://github.com/project-oak/oak/security/advisories/GHSA-3238-pp48-6m3j)
 * **Impact:** Discovered a critical validation flaw enabling a complete bypass of enclave security measurements, allowing untrusted hosts to spoof remote attestation states.
 
+### 🚀 Notable Security Discovery: Go SSH Private Key Parameter Validation Bypass
+* **Project:** Go Extended Cryptography Library (`golang/go` / `x/crypto`)
+* **Vulnerability:** Cryptographic Parameter Validation Bypass / Improper Input Validation
+* **Official Advisory:** [Issue #80418](https://github.com/golang/go/issues/80418)
+* **Impact:** Discovered a vulnerability in the `ssh.ParseDSAPrivateKey()` function where ASN.1 DER-encoded DSA private keys are processed without verifying the mathematical validity of their core cryptographic parameters (p, q, and g). An application parsing a maliciously structured or malformed private key could be forced into intense CPU exhaustion (Denial of Service), trigger runtime panics, or experience unpredictable cryptographic failures during signature and verification operations.
+
 ### 🚀 Notable Security Discovery: Go SSH Client Terminal Escape Sequence Injection
 * **Project:** Go Extended Cryptography Library (`golang/go` / `x/crypto`)
 * **Vulnerability:** Improper Input Sanitization / ANSI Escape Sequence Injection
