@@ -30,6 +30,18 @@ Specializing in cloud infrastructure hardening and advanced threat detection.
 * **Official Advisory:** [GHSA-3238-pp48-6m3j](https://github.com/project-oak/oak/security/advisories/GHSA-3238-pp48-6m3j)
 * **Impact:** Discovered a critical validation flaw enabling a complete bypass of enclave security measurements, allowing untrusted hosts to spoof remote attestation states.
 
+### 🚀 Notable Security Discovery: XNNPACK Batch Matrix Multiply Integer Overflow
+* **Project:** Google XNNPACK (`google/XNNPACK`)
+* **Vulnerability:** Integer Overflow / Heap-based Buffer Overflow
+* **Official Advisory:** [Pull Request #10842](https://github.com/google/XNNPACK/pull/10842)
+* **Impact:** Discovered an integer overflow vulnerability in the batch matrix multiplication operator when calculating packed weights allocation size. An attacker supplying oversized, caller-controlled tensor dimensions through public API calls could trigger heap memory corruption or runtime crashes.
+
+### 🚀 Notable Security Discovery: XNNPACK Deconvolution Kernel Calculation Memory Corruption
+* **Project:** Google XNNPACK (`google/XNNPACK`)
+* **Vulnerability:** Integer Overflow / Heap-based Buffer Overflow
+* **Official Advisory:** [Pull Request #10834](https://github.com/google/XNNPACK/pull/10834)
+* **Impact:** Identified an integer overflow flaw during kernel-size dimension calculations in the deconvolution operator. Processing maliciously crafted layer parameters bypassed spatial memory bounds, leading to heap buffer overflows and unexpected memory corruption.
+
 ### 🚀 Notable Security Discovery: Go SSH Private Key Parameter Validation Bypass
 * **Project:** Go Extended Cryptography Library (`golang/go` / `x/crypto`)
 * **Vulnerability:** Cryptographic Parameter Validation Bypass / Improper Input Validation
