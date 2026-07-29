@@ -30,11 +30,23 @@ Specializing in cloud infrastructure hardening and advanced threat detection.
 * **Official Advisory:** [GHSA-3238-pp48-6m3j](https://github.com/project-oak/oak/security/advisories/GHSA-3238-pp48-6m3j)
 * **Impact:** Discovered a critical validation flaw enabling a complete bypass of enclave security measurements, allowing untrusted hosts to spoof remote attestation states.
 
+### 🏆 Featured Security Discovery: GHSA-gqvg-gmmx-x4hm
+* **Project:** MLflow (`mlflow/mlflow`)
+* **Vulnerability:** Path Traversal / Arbitrary File Read
+* **Official Advisory:** [GHSA-gqvg-gmmx-x4hm](https://github.com/mlflow/mlflow/security/advisories/GHSA-gqvg-gmmx-x4hm)
+* **Impact:** Discovered a path traversal flaw in MLflow artifact retrieval endpoints. An attacker could manipulate URI path parameters to bypass directory containment and read arbitrary files directly from the underlying server filesystem.
+
 ### 🚀 Notable Security Discovery: XNNPACK Batch Matrix Multiply Integer Overflow
 * **Project:** Google XNNPACK (`google/XNNPACK`)
 * **Vulnerability:** Integer Overflow / Heap-based Buffer Overflow
 * **Official Advisory:** [Pull Request #10842](https://github.com/google/XNNPACK/pull/10842)
 * **Impact:** Discovered an integer overflow vulnerability in the batch matrix multiplication operator when calculating packed weights allocation size. An attacker supplying oversized, caller-controlled tensor dimensions through public API calls could trigger heap memory corruption or runtime crashes.
+
+### 🚀 Notable Security Discovery: OpenXLA Buffer Allocation Boundary Validation Flaw
+* **Project:** OpenXLA Compiler (`openxla/xla`)
+* **Vulnerability:** Out-of-Bounds Memory Access / Improper Input Validation
+* **Official Advisory:** [Pull Request #46105](https://github.com/openxla/xla/pull/46105)
+* **Impact:** Discovered a validation vulnerability in `BufferAssignment::FromProto` where assigned buffer allocation offsets and sizes were deserialized without verifying boundary limits. Loading malformed or untrusted HLO proto definitions allowed unvalidated offsets to trigger out-of-bounds memory access, heap corruption, or unexpected compiler crashes.
 
 ### 🚀 Notable Security Discovery: XNNPACK Deconvolution Kernel Calculation Memory Corruption
 * **Project:** Google XNNPACK (`google/XNNPACK`)
