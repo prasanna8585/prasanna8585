@@ -36,6 +36,12 @@ Specializing in cloud infrastructure hardening and advanced threat detection.
 * **Official Advisory:** [GHSA-gqvg-gmmx-x4hm](https://github.com/mlflow/mlflow/security/advisories/GHSA-gqvg-gmmx-x4hm)
 * **Impact:** Discovered a path traversal flaw in MLflow artifact retrieval endpoints. An attacker could manipulate URI path parameters to bypass directory containment and read arbitrary files directly from the underlying server filesystem.
 
+### 🏆 Featured Security Discovery: GHSA-pj9q-pv45-xq8g
+* **Project:** Google Project Oak (`project-oak/oak`)
+* **Vulnerability:** Stage0 Firmware Integer Overflow / Memory Corruption
+* **Official Advisory:** [GHSA-pj9q-pv45-xq8g](https://github.com/project-oak/oak/security/advisories/GHSA-pj9q-pv45-xq8g)
+* **Impact:** Discovered an integer overflow in the `setup_high_allocator` function within the stage0 bootloader firmware. An untrusted host or hypervisor could supply a maliciously crafted E820 memory map entry to trigger silent memory aliasing during heap initialization, leading to enclave memory corruption.
+
 ### 🚀 Notable Security Discovery: XNNPACK Batch Matrix Multiply Integer Overflow
 * **Project:** Google XNNPACK (`google/XNNPACK`)
 * **Vulnerability:** Integer Overflow / Heap-based Buffer Overflow
