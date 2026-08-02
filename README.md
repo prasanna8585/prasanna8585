@@ -42,6 +42,12 @@ Specializing in cloud infrastructure hardening and advanced threat detection.
 * **Official Advisory:** [GHSA-pj9q-pv45-xq8g](https://github.com/project-oak/oak/security/advisories/GHSA-pj9q-pv45-xq8g)
 * **Impact:** Discovered an integer overflow in the `setup_high_allocator` function within the stage0 bootloader firmware. An untrusted host or hypervisor could supply a maliciously crafted E820 memory map entry to trigger silent memory aliasing during heap initialization, leading to enclave memory corruption.
 
+### 🚀 Notable Security Discovery: Google ADK JS Unsafe A2A Metadata Control Flow Redirection
+* **Project:** Google ADK JS (`google/adk-js`)
+* **Vulnerability:** Agent-to-Agent (A2A) Metadata Injection / Control Flow Hijacking
+* **Official Advisory:** [Pull Request #596](https://github.com/google/adk-js/pull/596)
+* **Impact:** Discovered a security flaw in Agent-to-Agent (A2A) communications where untrusted peer-supplied `transferToAgent` metadata was processed without sanitization. A malicious remote agent could manipulate execution metadata to force unauthorized agent redirection and hijack local control flow.
+
 ### 🚀 Notable Security Discovery: OpenXLA / TensorFlow Shape Proto Integer Overflow
 * **Project:** OpenXLA & TensorFlow (`openxla/xla` / `tensorflow/tensorflow`)
 * **Vulnerability:** Integer Overflow / Out-of-Bounds Memory Access
