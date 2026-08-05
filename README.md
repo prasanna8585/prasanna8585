@@ -42,6 +42,18 @@ Specializing in cloud infrastructure hardening and advanced threat detection.
 * **Official Advisory:** [GHSA-pj9q-pv45-xq8g](https://github.com/project-oak/oak/security/advisories/GHSA-pj9q-pv45-xq8g)
 * **Impact:** Discovered an integer overflow in the `setup_high_allocator` function within the stage0 bootloader firmware. An untrusted host or hypervisor could supply a maliciously crafted E820 memory map entry to trigger silent memory aliasing during heap initialization, leading to enclave memory corruption.
 
+### 🚀 Notable Security Discovery: Go SSH Channel Stall Denial of Service
+* **Project:** Go Extended Cryptography Library (`golang/go` / `x/crypto`)
+* **Vulnerability:** Unhandled Protocol State Transition / Denial of Service
+* **Official Advisory:** [Issue #80333](https://github.com/golang/go/issues/80333)
+* **Impact:** Discovered a channel stall vulnerability in the `x/crypto/ssh` package where unhandled protocol state transitions caused concurrent SSH channel handlers to deadlock or hang indefinitely. An unauthenticated or authenticated client could exploit this to exhaust server connections and trigger a Denial of Service (DoS).
+
+### 🚀 Notable Security Discovery: XNNPACK Space-to-Depth Integer Overflow
+* **Project:** Google XNNPACK (`google/XNNPACK`)
+* **Vulnerability:** Integer Overflow / Heap-based Buffer Overflow
+* **Official Advisory:** [Pull Request #10907](https://github.com/google/XNNPACK/pull/10907)
+* **Impact:** Discovered an integer overflow vulnerability during output buffer calculation in the space-to-depth operator. Supplying oversized or maliciously structured tensor dimensions through public API calls could bypass buffer bounds checks, leading to heap memory corruption or runtime crashes.
+
 ### 🚀 Notable Security Discovery: Google ADK JS Unsafe A2A Metadata Control Flow Redirection
 * **Project:** Google ADK JS (`google/adk-js`)
 * **Vulnerability:** Agent-to-Agent (A2A) Metadata Injection / Control Flow Hijacking
