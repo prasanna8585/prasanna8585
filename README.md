@@ -42,6 +42,12 @@ Specializing in cloud infrastructure hardening and advanced threat detection.
 * **Official Advisory:** [GHSA-pj9q-pv45-xq8g](https://github.com/project-oak/oak/security/advisories/GHSA-pj9q-pv45-xq8g)
 * **Impact:** Discovered an integer overflow in the `setup_high_allocator` function within the stage0 bootloader firmware. An untrusted host or hypervisor could supply a maliciously crafted E820 memory map entry to trigger silent memory aliasing during heap initialization, leading to enclave memory corruption.
 
+### 🚀 Notable Security Discovery: Google ADK JS Zip-Slip Blacklist Bypass
+* **Project:** Google ADK JS (`google/adk-js`)
+* **Vulnerability:** Path Traversal / Zip-Slip Blacklist Bypass
+* **Official Advisory:** [Pull Request #621](https://github.com/google/adk-js/pull/621)
+* **Impact:** Discovered a Zip-Slip bypass vulnerability in archive extraction routines where blacklist-based path validation was insufficient. An attacker supplying a maliciously structured archive could bypass path checks to write or overwrite arbitrary files outside the target extraction directory on the underlying host filesystem.
+
 ### 🚀 Notable Security Discovery: Go SSH Channel Stall Denial of Service
 * **Project:** Go Extended Cryptography Library (`golang/go` / `x/crypto`)
 * **Vulnerability:** Unhandled Protocol State Transition / Denial of Service
