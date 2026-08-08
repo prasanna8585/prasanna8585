@@ -42,6 +42,12 @@ Specializing in cloud infrastructure hardening and advanced threat detection.
 * **Official Advisory:** [GHSA-pj9q-pv45-xq8g](https://github.com/project-oak/oak/security/advisories/GHSA-pj9q-pv45-xq8g)
 * **Impact:** Discovered an integer overflow in the `setup_high_allocator` function within the stage0 bootloader firmware. An untrusted host or hypervisor could supply a maliciously crafted E820 memory map entry to trigger silent memory aliasing during heap initialization, leading to enclave memory corruption.
 
+### 🚀 Notable Security Discovery: TensorFlow Lite Buffer Bounds Check Arithmetic Overflow
+* **Project:** TensorFlow (`tensorflow/tensorflow`)
+* **Vulnerability:** Arithmetic Overflow / Out-of-Bounds Memory Access
+* **Official Advisory:** [Pull Request #123910](https://github.com/tensorflow/tensorflow/pull/123910)
+* **Impact:** Discovered an arithmetic overflow vulnerability in TFLite buffer bounds checking logic during model deserialization (`tflite::Verify`). Processing malformed FlatBuffer models allowed boundary validation checks to be bypassed, leading to out-of-bounds memory access, heap corruption, or runtime crashes.
+
 ### 🚀 Notable Security Discovery: Google ADK JS Zip-Slip Blacklist Bypass
 * **Project:** Google ADK JS (`google/adk-js`)
 * **Vulnerability:** Path Traversal / Zip-Slip Blacklist Bypass
