@@ -42,6 +42,12 @@ Specializing in cloud infrastructure hardening and advanced threat detection.
 * **Official Advisory:** [GHSA-pj9q-pv45-xq8g](https://github.com/project-oak/oak/security/advisories/GHSA-pj9q-pv45-xq8g)
 * **Impact:** Discovered an integer overflow in the `setup_high_allocator` function within the stage0 bootloader firmware. An untrusted host or hypervisor could supply a maliciously crafted E820 memory map entry to trigger silent memory aliasing during heap initialization, leading to enclave memory corruption.
 
+### 🚀 Notable Security Discovery: Tink C++ Ed25519 PEM VLA Stack Safety Fix
+* **Project:** Google Tink C++ (`tink-crypto/tink-cc`)
+* **Vulnerability:** Variable-Length Array (VLA) Unsafe Allocation / Stack Overflow Risk
+* **Official Advisory:** [Pull Request #27](https://github.com/tink-crypto/tink-cc/pull/27)
+* **Impact:** Discovered non-standard Variable-Length Array (VLA) usage during Ed25519 PEM public-key buffer allocation. Migrated the dynamic stack allocation to a fixed-size `std::array` to prevent stack boundary exhaustion, undefined behavior, and potential stack overflow vulnerabilities.
+
 ### 🚀 Notable Security Discovery: TensorFlow Lite Buffer Bounds Check Arithmetic Overflow
 * **Project:** TensorFlow (`tensorflow/tensorflow`)
 * **Vulnerability:** Arithmetic Overflow / Out-of-Bounds Memory Access
