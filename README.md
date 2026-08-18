@@ -42,6 +42,12 @@ Specializing in cloud infrastructure hardening and advanced threat detection.
 * **Official Advisory:** [GHSA-pj9q-pv45-xq8g](https://github.com/project-oak/oak/security/advisories/GHSA-pj9q-pv45-xq8g)
 * **Impact:** Discovered an integer overflow in the `setup_high_allocator` function within the stage0 bootloader firmware. An untrusted host or hypervisor could supply a maliciously crafted E820 memory map entry to trigger silent memory aliasing during heap initialization, leading to enclave memory corruption.
 
+### 🚀 Notable Security Discovery: Google ADK Python RestApiTool Path Parameter Encoding Flaw
+* **Project:** Google ADK Python (`google/adk-python`)
+* **Vulnerability:** Path Traversal / Improper URL Input Encoding
+* **Official Advisory:** [Pull Request #6676](https://github.com/google/adk-python/pull/6676)
+* **Impact:** Discovered an improper input encoding vulnerability in `RestApiTool` path parameter handling. Failure to percent-encode user-supplied path parameter values allowed reserved characters and traversal sequences to manipulate constructed REST API endpoint paths, potentially enabling unauthorized endpoint access or parameter injection.
+
 ### 🚀 Notable Security Discovery: TensorFlow Lite Select Kernel Stack Buffer Overflow
 * **Project:** TensorFlow (`tensorflow/tensorflow`)
 * **Vulnerability:** Stack-based Buffer Overflow / Unbound Array Access
