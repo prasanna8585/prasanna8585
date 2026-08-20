@@ -42,6 +42,18 @@ Specializing in cloud infrastructure hardening and advanced threat detection.
 * **Official Advisory:** [GHSA-pj9q-pv45-xq8g](https://github.com/project-oak/oak/security/advisories/GHSA-pj9q-pv45-xq8g)
 * **Impact:** Discovered an integer overflow in the `setup_high_allocator` function within the stage0 bootloader firmware. An untrusted host or hypervisor could supply a maliciously crafted E820 memory map entry to trigger silent memory aliasing during heap initialization, leading to enclave memory corruption.
 
+### 🚀 Notable Security Discovery: Google ADK Go Tool Confirmation Authorization Bypass
+* **Project:** Google ADK Go (`google/adk-go`)
+* **Vulnerability:** Authorization Bypass / Unsanitized Event Execution
+* **Official Advisory:** [Pull Request #1357](https://github.com/google/adk-go/pull/1357)
+* **Impact:** Discovered an authorization flaw where remote Agent-to-Agent (A2A) peers could forge tool confirmation requests resumed from non-agent-authored events, bypassing human-in-the-loop validation gates. Enforced strict author checks to ensure tool execution confirmations are only processed when initiated by the local agent.
+
+### 🚀 Notable Security Discovery: gRPC Channelz TextEncode Large Message Truncation
+* **Project:** gRPC (`grpc/grpc`)
+* **Vulnerability:** Improper Output Handling / Buffer Truncation
+* **Official Advisory:** [Commit 92c56b6](https://github.com/grpc/grpc/commit/92c56b6fa00996961ef4ab706e4b858ef15e471d)
+* **Impact:** Discovered a truncation flaw in the `channelz::TextEncode()` large-message fallback mechanism. Unsafe string boundary handling during socket and channel state serialization could trigger message truncation, resulting in malformed diagnostic logs or incomplete telemetry output.
+
 ### 🚀 Notable Security Discovery: Google ADK Python RestApiTool Path Parameter Encoding Flaw
 * **Project:** Google ADK Python (`google/adk-python`)
 * **Vulnerability:** Path Traversal / Improper URL Input Encoding
