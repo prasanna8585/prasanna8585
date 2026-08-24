@@ -42,6 +42,12 @@ Specializing in cloud infrastructure hardening and advanced threat detection.
 * **Official Advisory:** [GHSA-pj9q-pv45-xq8g](https://github.com/project-oak/oak/security/advisories/GHSA-pj9q-pv45-xq8g)
 * **Impact:** Discovered an integer overflow in the `setup_high_allocator` function within the stage0 bootloader firmware. An untrusted host or hypervisor could supply a maliciously crafted E820 memory map entry to trigger silent memory aliasing during heap initialization, leading to enclave memory corruption.
 
+### 🚀 Notable Security Discovery: Google Project Oak OrderedCrypter Nonce Desynchronization DoS
+* **Project:** Google Project Oak (`project-oak/oak`)
+* **Vulnerability:** Unauthenticated Nonce State Advancement / Denial of Service
+* **Official Advisory:** [Pull Request #5162](https://github.com/project-oak/oak/pull/5162) | [Commit 33e1d29](https://github.com/project-oak/oak/commit/33e1d2930ac866d1a229402f82bbd9d696b70baa)
+* **Impact:** Discovered a vulnerability in the `OrderedCrypter` component where the receive-side nonce counter advanced prior to successful AEAD authentication. An unauthenticated attacker transmitting forged or corrupted encrypted frames could force premature nonce increments, triggering permanent session desynchronization and Denial of Service (DoS).
+
 ### 🚀 Notable Security Discovery: Google ADK Go Tool Confirmation Authorization Bypass
 * **Project:** Google ADK Go (`google/adk-go`)
 * **Vulnerability:** Authorization Bypass / Unsanitized Event Execution
