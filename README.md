@@ -42,6 +42,24 @@ Specializing in cloud infrastructure hardening and advanced threat detection.
 * **Official Advisory:** [GHSA-pj9q-pv45-xq8g](https://github.com/project-oak/oak/security/advisories/GHSA-pj9q-pv45-xq8g)
 * **Impact:** Discovered an integer overflow in the `setup_high_allocator` function within the stage0 bootloader firmware. An untrusted host or hypervisor could supply a maliciously crafted E820 memory map entry to trigger silent memory aliasing during heap initialization, leading to enclave memory corruption.
 
+### 🚀 Notable Security Discovery: Google ADK JS OAuth2 & Service Account Credential Leakage
+* **Project:** Google ADK JS (`google/adk-js`)
+* **Vulnerability:** Sensitive Data Exposure / Unsanitized A2A Credential Forwarding
+* **Official Advisory:** [Pull Request #767](https://github.com/google/adk-js/pull/767)
+* **Impact:** Discovered a credential exposure vulnerability where OAuth2 tokens and service account credentials were included in Agent-to-Agent (A2A) payload forwards. Enforced automated credential scrubbing prior to transmitting execution contexts to remote peers.
+
+### 🚀 Notable Security Discovery: Google ADK JS Dev Server DNS Rebinding
+* **Project:** Google ADK JS (`google/adk-js`)
+* **Vulnerability:** DNS Rebinding / Host Header Validation Bypass
+* **Official Advisory:** [Pull Request #744](https://github.com/google/adk-js/pull/744)
+* **Impact:** Discovered a DNS rebinding vulnerability in the local development server. Implemented strict host header enforcement and origin validation to prevent malicious cross-origin websites from accessing the local ADK dev environment.
+
+### 🚀 Notable Security Discovery: Google ADK JS Non-Agent Event Tool Confirmation Bypass
+* **Project:** Google ADK JS (`google/adk-js`)
+* **Vulnerability:** Authorization Bypass / Unsanitized Event Resumption
+* **Official Advisory:** [Pull Request #755](https://github.com/google/adk-js/pull/755)
+* **Impact:** Discovered an authorization flaw allowing tool confirmations to be resumed from events not authored by the local agent. Added validation to reject unauthorized tool confirmation payloads originating from non-agent-authored events.
+
 ### 🚀 Notable Security Discovery: Google Project Oak OrderedCrypter Nonce Desynchronization DoS
 * **Project:** Google Project Oak (`project-oak/oak`)
 * **Vulnerability:** Unauthenticated Nonce State Advancement / Denial of Service
