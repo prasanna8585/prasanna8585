@@ -42,6 +42,18 @@ Specializing in cloud infrastructure hardening and advanced threat detection.
 * **Official Advisory:** [GHSA-pj9q-pv45-xq8g](https://github.com/project-oak/oak/security/advisories/GHSA-pj9q-pv45-xq8g)
 * **Impact:** Discovered an integer overflow in the `setup_high_allocator` function within the stage0 bootloader firmware. An untrusted host or hypervisor could supply a maliciously crafted E820 memory map entry to trigger silent memory aliasing during heap initialization, leading to enclave memory corruption.
 
+### 🚀 Notable Security Discovery: Google ADK Go Unsafe A2A Metadata Execution Path Hijacking
+* **Project:** Google ADK Go (`google/adk-go`)
+* **Vulnerability:** Agent-to-Agent (A2A) Metadata Injection / Control Flow Hijacking
+* **Official Advisory:** [Pull Request #1226](https://github.com/google/adk-go/pull/1226)
+* **Impact:** Discovered a security flaw in Agent-to-Agent (A2A) peer communications where unsanitized `transferToAgent` metadata was processed. A malicious remote agent could manipulate metadata parameters to force unauthorized agent redirection and hijack local execution paths.
+
+### 🚀 Notable Security Discovery: TensorFlow Unvalidated Op Attributes Code Injection
+* **Project:** TensorFlow (`tensorflow/tensorflow`)
+* **Vulnerability:** Code Injection / Unvalidated Op Attributes
+* **Official Advisory:** [Pull Request #124374](https://github.com/tensorflow/tensorflow/pull/124374)
+* **Impact:** Discovered a code injection flaw resulting from missing validation on Op attributes and execution arguments during graph compilation. Maliciously crafted operator attributes could be leveraged to execute arbitrary code within TensorFlow execution contexts.
+
 ### 🚀 Notable Security Discovery: Google ADK JS OAuth2 & Service Account Credential Leakage
 * **Project:** Google ADK JS (`google/adk-js`)
 * **Vulnerability:** Sensitive Data Exposure / Unsanitized A2A Credential Forwarding
