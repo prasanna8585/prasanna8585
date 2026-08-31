@@ -42,6 +42,12 @@ Specializing in cloud infrastructure hardening and advanced threat detection.
 * **Official Advisory:** [GHSA-pj9q-pv45-xq8g](https://github.com/project-oak/oak/security/advisories/GHSA-pj9q-pv45-xq8g)
 * **Impact:** Discovered an integer overflow in the `setup_high_allocator` function within the stage0 bootloader firmware. An untrusted host or hypervisor could supply a maliciously crafted E820 memory map entry to trigger silent memory aliasing during heap initialization, leading to enclave memory corruption.
 
+### 🚀 Notable Security Discovery: Google ADK Java Indirect Prompt Injection via Unfenced Relayed Content
+* **Project:** Google ADK Java (`google/adk-java`)
+* **Vulnerability:** Indirect Prompt Injection / Instruction Override
+* **Official Advisory:** [Pull Request #1441](https://github.com/google/adk-java/pull/1441)
+* **Impact:** Discovered an indirect prompt injection vulnerability where unfenced content relayed between agents could be misinterpreted as authoritative instructions by the receiving language model. Implemented structural fencing with explicit boundary delimiters to isolate relayed payloads from system prompts.
+
 ### 🚀 Notable Security Discovery: Google ADK Go Unsafe A2A Metadata Execution Path Hijacking
 * **Project:** Google ADK Go (`google/adk-go`)
 * **Vulnerability:** Agent-to-Agent (A2A) Metadata Injection / Control Flow Hijacking
