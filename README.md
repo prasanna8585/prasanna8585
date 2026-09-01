@@ -42,6 +42,12 @@ Specializing in cloud infrastructure hardening and advanced threat detection.
 * **Official Advisory:** [GHSA-pj9q-pv45-xq8g](https://github.com/project-oak/oak/security/advisories/GHSA-pj9q-pv45-xq8g)
 * **Impact:** Discovered an integer overflow in the `setup_high_allocator` function within the stage0 bootloader firmware. An untrusted host or hypervisor could supply a maliciously crafted E820 memory map entry to trigger silent memory aliasing during heap initialization, leading to enclave memory corruption.
 
+### 🚀 Notable Security Discovery: Google ADK Go Cross-Origin Card Interface Redirection
+* **Project:** Google ADK Go (`google/adk-go`)
+* **Vulnerability:** Cross-Origin Redirection / Improper Origin Validation
+* **Official Advisory:** [Pull Request #1418](https://github.com/google/adk-go/pull/1418)
+* **Impact:** Discovered an origin validation vulnerability where `NewAgentCardProvider` trusted declared RPC interface URLs without verifying origin boundaries. Added `validateCardInterfaceOrigins` to enforce strict origin parity checks on fetched agent card interface URLs, preventing malicious cross-origin traffic redirection.
+
 ### 🚀 Notable Security Discovery: Google ADK Java Indirect Prompt Injection via Unfenced Relayed Content
 * **Project:** Google ADK Java (`google/adk-java`)
 * **Vulnerability:** Indirect Prompt Injection / Instruction Override
