@@ -42,6 +42,12 @@ Specializing in cloud infrastructure hardening and advanced threat detection.
 * **Official Advisory:** [GHSA-pj9q-pv45-xq8g](https://github.com/project-oak/oak/security/advisories/GHSA-pj9q-pv45-xq8g)
 * **Impact:** Discovered an integer overflow in the `setup_high_allocator` function within the stage0 bootloader firmware. An untrusted host or hypervisor could supply a maliciously crafted E820 memory map entry to trigger silent memory aliasing during heap initialization, leading to enclave memory corruption.
 
+### 🚀 Notable Security Discovery: Google ADK Python Auth-Gated Tool Call Authorization Bypass
+* **Project:** Google ADK Python (`google/adk-python`)
+* **Vulnerability:** Authorization Bypass / Improper Function Call Validation
+* **Official Advisory:** [Pull Request #6474](https://github.com/google/adk-python/pull/6474)
+* **Impact:** Discovered an authorization flaw where auth-gated tool execution could be resumed without verifying the function call author. Added strict authorship validation to prevent unauthorized or untrusted events from resuming and executing auth-gated tool operations.
+
 ### 🚀 Notable Security Discovery: Google ADK Go Cross-Origin Card Interface Redirection
 * **Project:** Google ADK Go (`google/adk-go`)
 * **Vulnerability:** Cross-Origin Redirection / Improper Origin Validation
