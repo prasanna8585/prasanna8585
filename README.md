@@ -6,6 +6,12 @@ Specializing in cloud infrastructure hardening and advanced threat detection.
 
 ---
 
+### 🏆 Featured Security Discovery: CVE-2026-80047
+* **Project:** Hugging Face Transformers (`huggingface/transformers`)
+* **Vulnerability:** Pre-Consent Arbitrary File Write / Local Module Cache Poisoning - CVSS 7.8
+* **Official Advisory:** [CVE-2026-80047](https://nvd.nist.gov/vuln/detail/CVE-2026-80047) | [VU#456290](https://kb.cert.org/vuls/id/456290)
+* **Impact:** Discovered an arbitrary file write flaw in `GenerativePreTrainedModel.load_custom_generate()` where remote Python modules were fetched and cached locally before evaluating user consent (`trust_remote_code`). An attacker could plant untrusted code in `~/.cache/huggingface/modules` even if the user rejected the execution prompt.
+
 ### 🏆 Featured Security Discovery: CVE-2026-46602
 * **Project:** Go Core Image Packages (`golang.org/x/image/tiff`)
 * **Vulnerability:** Unbounded Memory Allocation / Resource Exhaustion - CVSS 7.5
