@@ -54,6 +54,12 @@ Specializing in cloud infrastructure hardening and advanced threat detection.
 * **Official Advisory:** [GHSA-pj9q-pv45-xq8g](https://github.com/project-oak/oak/security/advisories/GHSA-pj9q-pv45-xq8g)
 * **Impact:** Discovered an integer overflow in the `setup_high_allocator` function within the stage0 bootloader firmware. An untrusted host or hypervisor could supply a maliciously crafted E820 memory map entry to trigger silent memory aliasing during heap initialization, leading to enclave memory corruption.
 
+### 🚀 Notable Security Discovery: Google ADK JS Incomplete Agent Resolution on Session Resumption
+* **Project:** Google ADK JS (`google/adk-js`)
+* **Vulnerability:** Improper State Handling / Incomplete Agent Resolution
+* **Official Advisory:** [Pull Request #810](https://github.com/google/adk-js/pull/810)
+* **Impact:** Discovered a logic flaw during session and workflow resumption where agent resolution checked only the initial function response in multi-tool event payloads. Updated the resolution path to evaluate every function response, preventing execution desynchronization or unintended agent fallbacks during resumed operations.
+
 ### 🚀 Notable Security Discovery: Google ADK Python Auth-Gated Tool Call Authorization Bypass
 * **Project:** Google ADK Python (`google/adk-python`)
 * **Vulnerability:** Authorization Bypass / Improper Function Call Validation
