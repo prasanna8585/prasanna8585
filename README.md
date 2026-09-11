@@ -4,6 +4,9 @@
 ### 🛡️ Cybersecurity Practitioner | Cloud Security Architect
 Specializing in cloud infrastructure hardening and advanced threat detection.
 
+
+<img src="https://gitranks.com/api/badge/v2/prasanna8585?ranking=c&context=global&type=tier&meta=none&label=Contributor+Rank&cornerStyle=rounded&labelBgColor=%235c5c5c&valueBgColor=%237c3aed" />
+
 ---
 
 ### 🏆 Featured Security Discovery: CVE-2026-86840
