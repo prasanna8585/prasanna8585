@@ -5,7 +5,7 @@
 Specializing in cloud infrastructure hardening and advanced threat detection.
 
 
-<img src="https://gitranks.com/api/badge/v2/prasanna8585?ranking=c&context=global&type=percentile&meta=none&label=Contributor+Rank&cornerStyle=squared&labelBgColor=%235c5c5c&valueBgColor=%237c3aed" />
+<img src="https://gitranks.com/api/badge/v2/prasanna8585?ranking=c&context=global&type=percentile&meta=none&label=Contributor+Rank&cornerStyle=rounded&labelBgColor=%235c5c5c&valueBgColor=%237c3aed" />
 
 ---
 
