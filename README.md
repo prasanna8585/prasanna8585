@@ -57,6 +57,12 @@ Specializing in cloud infrastructure hardening and advanced threat detection.
 * **Official Advisory:** [GHSA-pj9q-pv45-xq8g](https://github.com/project-oak/oak/security/advisories/GHSA-pj9q-pv45-xq8g)
 * **Impact:** Discovered an integer overflow in the `setup_high_allocator` function within the stage0 bootloader firmware. An untrusted host or hypervisor could supply a maliciously crafted E820 memory map entry to trigger silent memory aliasing during heap initialization, leading to enclave memory corruption.
 
+### 🚀 Notable Security Discovery: Google go-github URL Path Injection / Unescaped Environment Names
+* **Project:** Google `go-github` (`github.com/google/go-github`)
+* **Vulnerability:** Improper Input Sanitization / URL Path Injection Risk
+* **Official Advisory:** [Pull Request #4536](https://github.com/google/go-github/pull/4536)
+* **Impact:** Identified unescaped environment name parameters used in REST API URL path construction across multiple client endpoints. Added proper URL path escaping (`url.PathEscape`) to prevent path traversal, unexpected endpoint routing, or API parameter injection when handling environment names containing slashes or special characters.
+
 ### 🚀 Notable Security Discovery: Google ADK JS Incomplete Agent Resolution on Session Resumption
 * **Project:** Google ADK JS (`google/adk-js`)
 * **Vulnerability:** Improper State Handling / Incomplete Agent Resolution
