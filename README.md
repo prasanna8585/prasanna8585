@@ -271,11 +271,13 @@ Specializing in cloud infrastructure hardening and advanced threat detection.
 ---
 *"Securing the cloud, one exploit at a time."*
 
+![Bug Bounty Target Radar](https://raw.githubusercontent.com/prasanna8585/prasanna8585/master/assets/bug-bounty-radar.svg)
+
+
+
 <p align="left">
   <img src="https://komarev.com/ghpvc/?username=prasanna8585&label=Profile%20views&color=0e75b6&style=flat" alt="prasanna8585" />
 </p>
-
-![Bug Bounty Target Radar](https://raw.githubusercontent.com/prasanna8585/prasanna8585/master/assets/bug-bounty-radar.svg)
 <!--
 **prasanna8585/prasanna8585** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
