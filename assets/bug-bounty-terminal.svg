@@ -15,9 +15,9 @@
   <rect width="600" height="345" rx="8" fill="#0d1117" stroke="#30363d" stroke-width="1.5"/>
   <path d="M0,8 A8,8 0 0,1 8,0 H592 A8,8 0 0,1 600,8 V30 H0 Z" fill="#161b22" stroke="#30363d" stroke-width="0.5"/>
   <circle cx="20" cy="15" r="6" fill="#f85149" /><circle cx="40" cy="15" r="6" fill="#f0883e" /><circle cx="60" cy="15" r="6" fill="#3fb950" />
-  <text x="300" y="19" class="title" text-anchor="middle">prasanna@sec-ops:~ (sh)</text>
+  <text x="300" y="19" class="title" text-anchor="middle">voltron@sec-ops:~ (sh)</text>
   <g class="terminal" transform="translate(20, 55)">
-    <text x="0" y="0"><tspan class="prompt">prasanna@sec-ops:~$</tspan> <tspan class="cmd">./fetch-vulns.sh --disclosed</tspan></text>
+    <text x="0" y="0"><tspan class="prompt">voltron@sec-ops:~$</tspan> <tspan class="cmd">./fetch-vulns.sh --disclosed</tspan></text>
     <text x="0" y="25" class="info">[i] Fetching vulnerability records from active platforms...</text>
     <text x="0" y="55" class="info">ID             | TARGET / VULNERABILITY               | SEV / IMPACT</text>
     <text x="0" y="65" class="border">──────────────────────────────────────────────────────────────────────</text>
@@ -29,6 +29,6 @@
     <text x="0" y="190"><tspan class="high">CVE-2026-12681</tspan> <tspan xml:space="preserve"> | Google go-attestation TPM Bypass     | </tspan><tspan class="high">8.9 HIGH</tspan></text>
     <text x="0" y="230" class="border">──────────────────────────────────────────────────────────────────────</text>
     <text x="0" y="260" class="success">[✔] 5 active advisories synced successfully.</text>
-    <text x="0" y="290"><tspan class="prompt">prasanna@sec-ops:~$</tspan> <tspan class="cmd">_</tspan></text>
+    <text x="0" y="290"><tspan class="prompt">voltron@sec-ops:~$</tspan> <tspan class="cmd">_</tspan></text>
   </g>
 </svg>
