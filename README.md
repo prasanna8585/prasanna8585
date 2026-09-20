@@ -11,7 +11,7 @@ Specializing in cloud infrastructure hardening and advanced threat detection.
 
 ### 🏆 Featured Security Discovery: CVE-2026-86840
 * **Project:** Bifrost Substrate Pallets (`bifrost-finance/bifrost`)
-* **Vulnerability:** Improper Authorization / Commission Attribution Manipulation - CVSS 8.6
+* **Vulnerability:** Improper Authorization / Commission Attribution Manipulation - CVSS 9.1
 * **Official Advisory:** [CVE-2026-86840](https://nvd.nist.gov/vuln/detail/CVE-2026-86840)
 * **Impact:** Discovered a missing authorization flaw in the `vtoken-minting` and `slpx` pallets where unvalidated `channel_id` parameters allowed any caller to forge mint volume attribution, disproportionately diverting protocol commission payouts away from the Bifrost treasury at zero extra capital cost.
 
