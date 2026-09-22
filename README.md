@@ -57,6 +57,12 @@ Specializing in cloud infrastructure hardening and advanced threat detection.
 * **Official Advisory:** [GHSA-pj9q-pv45-xq8g](https://github.com/project-oak/oak/security/advisories/GHSA-pj9q-pv45-xq8g)
 * **Impact:** Discovered an integer overflow in the `setup_high_allocator` function within the stage0 bootloader firmware. An untrusted host or hypervisor could supply a maliciously crafted E820 memory map entry to trigger silent memory aliasing during heap initialization, leading to enclave memory corruption.
 
+### 🚀 Notable Security Discovery: Google XNNPACK Integer Overflow in Sparse Convolution Weights Size
+* **Project:** Google XNNPACK (`google/XNNPACK`)
+* **Vulnerability:** Integer Overflow / Memory Allocation Flaw
+* **Official Advisory:** [Pull Request #11245](https://github.com/google/XNNPACK/pull/11245)
+* **Impact:** Identified an integer overflow vulnerability in `convolution-nchw.c` when calculating `packed_weights_size` for sparse convolution operators. Added explicit bounds checking to guard against integer wrapping during weight packing size calculations, preventing potential out-of-bounds memory allocations or heap corruption during model initialization.
+
 ### 🚀 Notable Security Discovery: Google ADK Python MCP Tool Description Fencing
 * **Project:** Google ADK Python (`google/adk-python`)
 * **Vulnerability:** Improper Boundary Fencing / Prompt Injection Risk
