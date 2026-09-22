@@ -57,6 +57,12 @@ Specializing in cloud infrastructure hardening and advanced threat detection.
 * **Official Advisory:** [GHSA-pj9q-pv45-xq8g](https://github.com/project-oak/oak/security/advisories/GHSA-pj9q-pv45-xq8g)
 * **Impact:** Discovered an integer overflow in the `setup_high_allocator` function within the stage0 bootloader firmware. An untrusted host or hypervisor could supply a maliciously crafted E820 memory map entry to trigger silent memory aliasing during heap initialization, leading to enclave memory corruption.
 
+### 🚀 Notable Security Discovery: Google ADK Python MCP Tool Description Fencing
+* **Project:** Google ADK Python (`google/adk-python`)
+* **Vulnerability:** Improper Boundary Fencing / Prompt Injection Risk
+* **Official Advisory:** [Pull Request #6971](https://github.com/google/adk-python/pull/6971)
+* **Impact:** Identified a logic gap where Model Context Protocol (MCP) tool descriptions lacked proper boundary fencing before being processed by the agent. Implemented structural fencing to isolate these descriptions, mitigating the risk of prompt injection and ensuring that untrusted tool descriptions cannot be parsed as core system instructions.
+
 ### 🚀 Notable Security Discovery: Google go-github URL Path Injection / Unescaped Environment Names
 * **Project:** Google `go-github` (`github.com/google/go-github`)
 * **Vulnerability:** Improper Input Sanitization / URL Path Injection Risk
