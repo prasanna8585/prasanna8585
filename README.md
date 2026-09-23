@@ -57,6 +57,12 @@ Specializing in cloud infrastructure hardening and advanced threat detection.
 * **Official Advisory:** [GHSA-pj9q-pv45-xq8g](https://github.com/project-oak/oak/security/advisories/GHSA-pj9q-pv45-xq8g)
 * **Impact:** Discovered an integer overflow in the `setup_high_allocator` function within the stage0 bootloader firmware. An untrusted host or hypervisor could supply a maliciously crafted E820 memory map entry to trigger silent memory aliasing during heap initialization, leading to enclave memory corruption.
 
+### 🚀 Notable Security Discovery: OpenXLA XLA ShardingParam Integer Overflow & Division-by-Zero
+* **Project:** OpenXLA XLA (`openxla/xla`)
+* **Vulnerability:** Unvalidated Deserialization / Integer Overflow / Denial-of-Service Risk
+* **Official Advisory:** [Pull Request #46773](https://github.com/openxla/xla/pull/46773)
+* **Impact:** Discovered unguarded integer overflows and missing input validation during `ShardingParam` deserialization. Malformed sharding parameters could lead to arithmetic wrapping or division-by-zero exceptions, enabling potential Denial-of-Service (DoS) crashes during tensor compiler execution and distributed model transformations.
+
 ### 🚀 Notable Security Discovery: Google Sandboxed API Writable Root in Shared Mount Namespace
 * **Project:** Google Sandboxed API (`google/sandboxed-api`)
 * **Vulnerability:** Improper Mount Isolation / Sandbox Boundary Bypass Risk
