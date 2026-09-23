@@ -57,6 +57,12 @@ Specializing in cloud infrastructure hardening and advanced threat detection.
 * **Official Advisory:** [GHSA-pj9q-pv45-xq8g](https://github.com/project-oak/oak/security/advisories/GHSA-pj9q-pv45-xq8g)
 * **Impact:** Discovered an integer overflow in the `setup_high_allocator` function within the stage0 bootloader firmware. An untrusted host or hypervisor could supply a maliciously crafted E820 memory map entry to trigger silent memory aliasing during heap initialization, leading to enclave memory corruption.
 
+### 🚀 Notable Security Discovery: Google Sandboxed API Writable Root in Shared Mount Namespace
+* **Project:** Google Sandboxed API (`google/sandboxed-api`)
+* **Vulnerability:** Improper Mount Isolation / Sandbox Boundary Bypass Risk
+* **Official Advisory:** [Pull Request #183](https://github.com/google/sandboxed-api/pull/183)
+* **Impact:** Identified a mount isolation gap in Sandbox2's `EnableSharedMountNamespace()` where shared mount namespaces failed to reject a writable root filesystem. Enforced explicit read-only root validation during namespace initialization, preventing sandboxed processes from altering host mount points or compromising sandbox isolation boundaries.
+
 ### 🚀 Notable Security Discovery: Google XNNPACK Integer Overflow in Sparse Convolution Weights Size
 * **Project:** Google XNNPACK (`google/XNNPACK`)
 * **Vulnerability:** Integer Overflow / Memory Allocation Flaw
