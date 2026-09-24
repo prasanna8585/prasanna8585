@@ -9,6 +9,18 @@ Specializing in cloud infrastructure hardening and advanced threat detection.
 
 ---
 
+### 🏆 Featured Security Discovery: CVE-2026-96804
+* **Project:** MLflow (`mlflow/mlflow`)
+* **Vulnerability:** Unconditional Deserialization Safety Switch Bypass / Remote Code Execution - CVSS 8.8
+* **Official Advisory:** [CVE-2026-96804](https://nvd.nist.gov/vuln/detail/CVE-2026-96804) | [VU#369093](https://kb.cert.org/vuls/id/369093)
+* **Impact:** Discovered an un-guarded deserialization flaw in MLflow's `statsmodels` model flavor, which called `pickle.load()` directly without ever consulting the `MLFLOW_ALLOW_PICKLE_DESERIALIZATION` configuration. This complete omission allowed untrusted model artifacts to trigger arbitrary remote code execution (RCE), entirely bypassing operator security controls.
+
+### 🏆 Featured Security Discovery: CVE-2026-96775
+* **Project:** MLflow (`mlflow/mlflow`)
+* **Vulnerability:** Deserialization Safety Switch Extension-Bypass / Remote Code Execution - CVSS 8.8
+* **Official Advisory:** [CVE-2026-96775](https://nvd.nist.gov/vuln/detail/CVE-2026-96775) | [VU#369093](https://kb.cert.org/vuls/id/369093)
+* **Impact:** Discovered a security control bypass in MLflow's `dspy` model flavor where the `MLFLOW_ALLOW_PICKLE_DESERIALIZATION` safety switch was only evaluated if the model path ended in `.pkl`. Supplying a directory or non-`.pkl` file path routed execution directly into `cloudpickle`, permitting arbitrary remote code execution (RCE) via malicious MLmodel artifacts even when pickle deserialization was explicitly disabled by the operator.
+
 ### 🏆 Featured Security Discovery: CVE-2026-86840
 * **Project:** Bifrost Substrate Pallets (`bifrost-finance/bifrost`)
 * **Vulnerability:** Improper Authorization / Commission Attribution Manipulation - CVSS 9.1
