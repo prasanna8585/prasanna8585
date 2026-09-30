@@ -69,6 +69,12 @@ Specializing in cloud infrastructure hardening and advanced threat detection.
 * **Official Advisory:** [GHSA-pj9q-pv45-xq8g](https://github.com/project-oak/oak/security/advisories/GHSA-pj9q-pv45-xq8g)
 * **Impact:** Discovered an integer overflow in the `setup_high_allocator` function within the stage0 bootloader firmware. An untrusted host or hypervisor could supply a maliciously crafted E820 memory map entry to trigger silent memory aliasing during heap initialization, leading to enclave memory corruption.
 
+### 🚀 Notable Security Discovery: Google ADK-Go Unbounded WebSocket Payload / DoS
+* **Project:** Google ADK for Go (`google/adk-go`)
+* **Vulnerability:** Unbounded Resource Consumption / Denial-of-Service (DoS)
+* **Official Advisory:** [Issue #1666](https://github.com/google/adk-go/issues/1666) | [Pull Request #1664](https://github.com/google/adk-go/pull/1664)
+* **Impact:** Identified missing payload size restrictions on the `/run_live` WebSocket endpoint. An attacker could send unconstrained WebSocket frames to trigger excessive memory allocation and system resource exhaustion, leading to application crashes and Denial-of-Service. Resolved in PR #1664 by enforcing strict message size limits during WebSocket read operations.
+
 ### 🚀 Notable Security Discovery: OpenXLA XLA ShardingParam Integer Overflow & Division-by-Zero
 * **Project:** OpenXLA XLA (`openxla/xla`)
 * **Vulnerability:** Unvalidated Deserialization / Integer Overflow / Denial-of-Service Risk
