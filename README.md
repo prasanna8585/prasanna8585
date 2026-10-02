@@ -69,6 +69,12 @@ Specializing in cloud infrastructure hardening and advanced threat detection.
 * **Official Advisory:** [GHSA-pj9q-pv45-xq8g](https://github.com/project-oak/oak/security/advisories/GHSA-pj9q-pv45-xq8g)
 * **Impact:** Discovered an integer overflow in the `setup_high_allocator` function within the stage0 bootloader firmware. An untrusted host or hypervisor could supply a maliciously crafted E820 memory map entry to trigger silent memory aliasing during heap initialization, leading to enclave memory corruption.
 
+### 🚀 Notable Security Discovery: Google ADK-JS Agent Card RPC Origin Pinning Flaw
+* **Project:** Google ADK for JavaScript (`google/adk-js`)
+* **Vulnerability:** Cross-Origin RPC Redirection / Origin Pinning Gap
+* **Official Advisory:** [Pull Request #829](https://github.com/google/adk-js/pull/829)
+* **Impact:** Identified a security flaw in agent card processing where fetched agent cards could specify arbitrary RPC URLs without validating or restricting them to the originating domain. This enabled potential cross-origin RPC redirection or data exposure to untrusted endpoints. Fixed in PR #829 by strictly pinning all RPC URLs to the origin from which the agent card was retrieved.
+
 ### 🚀 Notable Security Discovery: Google ADK-Go Unbounded WebSocket Payload / DoS
 * **Project:** Google ADK for Go (`google/adk-go`)
 * **Vulnerability:** Unbounded Resource Consumption / Denial-of-Service (DoS)
