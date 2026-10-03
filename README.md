@@ -69,6 +69,12 @@ Specializing in cloud infrastructure hardening and advanced threat detection.
 * **Official Advisory:** [GHSA-pj9q-pv45-xq8g](https://github.com/project-oak/oak/security/advisories/GHSA-pj9q-pv45-xq8g)
 * **Impact:** Discovered an integer overflow in the `setup_high_allocator` function within the stage0 bootloader firmware. An untrusted host or hypervisor could supply a maliciously crafted E820 memory map entry to trigger silent memory aliasing during heap initialization, leading to enclave memory corruption.
 
+### 🚀 Notable Security Discovery: Google ADK-Python OAuth2 Credential Leak in Tracing
+* **Project:** Google ADK for Python (`google/adk-python`)
+* **Vulnerability:** Unredacted Credential Exposure / Sensitive Data Logging
+* **Official Advisory:** [Pull Request #6957](https://github.com/google/adk-python/pull/6957)
+* **Impact:** Identified an unredacted credential logging vulnerability in the `trace_tool_call` function where OAuth2 client secrets and access tokens were emitted in plain text during tool execution tracing. This posed a risk of sensitive token exposure via telemetry data, application logs, or external monitoring streams. Addressed in PR #6957 by introducing automated token and secret redaction logic prior to trace serialization.
+
 ### 🚀 Notable Security Discovery: Google ADK-JS Agent Card RPC Origin Pinning Flaw
 * **Project:** Google ADK for JavaScript (`google/adk-js`)
 * **Vulnerability:** Cross-Origin RPC Redirection / Origin Pinning Gap
