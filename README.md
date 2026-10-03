@@ -75,6 +75,12 @@ Specializing in cloud infrastructure hardening and advanced threat detection.
 * **Official Advisory:** [Pull Request #829](https://github.com/google/adk-js/pull/829)
 * **Impact:** Identified a security flaw in agent card processing where fetched agent cards could specify arbitrary RPC URLs without validating or restricting them to the originating domain. This enabled potential cross-origin RPC redirection or data exposure to untrusted endpoints. Fixed in PR #829 by strictly pinning all RPC URLs to the origin from which the agent card was retrieved.
 
+### 🚀 Notable Security Discovery: Google ADK-Python Shared Node Agent Mutation Flaw
+* **Project:** Google ADK for Python (`google/adk-python`)
+* **Vulnerability:** Unintended State Mutation / Execution State Leak
+* **Official Advisory:** [Pull Request #7173](https://github.com/google/adk-python/pull/7173)
+* **Impact:** Identified an issue in `run_llm_agent_as_node` where executing an LLM agent directly mutated the shared node agent instance rather than preserving state isolation. This unhandled mutation could lead to state leaks, race conditions, or unexpected side effects across concurrent agent workflow executions. Fixed in PR #7173 by ensuring node agent instances are handled immutably.
+
 ### 🚀 Notable Security Discovery: Google ADK-Go Unbounded WebSocket Payload / DoS
 * **Project:** Google ADK for Go (`google/adk-go`)
 * **Vulnerability:** Unbounded Resource Consumption / Denial-of-Service (DoS)
