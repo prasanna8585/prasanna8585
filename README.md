@@ -69,6 +69,12 @@ Specializing in cloud infrastructure hardening and advanced threat detection.
 * **Official Advisory:** [GHSA-pj9q-pv45-xq8g](https://github.com/project-oak/oak/security/advisories/GHSA-pj9q-pv45-xq8g)
 * **Impact:** Discovered an integer overflow in the `setup_high_allocator` function within the stage0 bootloader firmware. An untrusted host or hypervisor could supply a maliciously crafted E820 memory map entry to trigger silent memory aliasing during heap initialization, leading to enclave memory corruption.
 
+### 🚀 Notable Security Discovery: Google XNNPACK Requantization Integer Overflow
+* **Project:** Google XNNPACK (`google/XNNPACK`)
+* **Vulnerability:** Integer Overflow / Memory Corruption
+* **Official Advisory:** [Pull Request #10934](https://github.com/google/XNNPACK/pull/10934)
+* **Impact:** Identified an integer overflow vulnerability in the qc2w/qc4w requantization scale allocation logic within the XNNPACK library. This flaw could lead to undersized memory allocations, resulting in heap memory corruption or out-of-bounds writes when processing maliciously crafted tensor operations. Fixed in PR #10934 by correcting the allocation size calculations.
+
 ### 🚀 Notable Security Discovery: Google ADK-Python OAuth2 Credential Leak in Tracing
 * **Project:** Google ADK for Python (`google/adk-python`)
 * **Vulnerability:** Unredacted Credential Exposure / Sensitive Data Logging
