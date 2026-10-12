@@ -69,6 +69,12 @@ Specializing in cloud infrastructure hardening and advanced threat detection.
 * **Official Advisory:** [GHSA-pj9q-pv45-xq8g](https://github.com/project-oak/oak/security/advisories/GHSA-pj9q-pv45-xq8g)
 * **Impact:** Discovered an integer overflow in the `setup_high_allocator` function within the stage0 bootloader firmware. An untrusted host or hypervisor could supply a maliciously crafted E820 memory map entry to trigger silent memory aliasing during heap initialization, leading to enclave memory corruption.
 
+### 🚀 Notable Security Discovery: FFmpeg MOV Demuxer `iinf`/`infe` Size Validation
+* **Project:** FFmpeg (`FFmpeg/FFmpeg`)
+* **Vulnerability:** Defense-in-Depth Size Budget Validation / Input Bounds Check
+* **Official Advisory:** [PR #25006](https://code.ffmpeg.org/FFmpeg/FFmpeg/pulls/25006)
+* **Impact:** Identified a defensive input validation gap in `mov_read_iinf()` where individual `infe` sub-box sizes were read directly from the bitstream without checking against the remaining capacity of the enclosing `iinf` atom. Hardened the parser by enforcing running size budget checks, matching similar safety boundaries applied across neighboring MOV/MP4 container boxes.
+
 ### 🚀 Notable Security Discovery: Google XNNPACK Requantization Integer Overflow
 * **Project:** Google XNNPACK (`google/XNNPACK`)
 * **Vulnerability:** Integer Overflow / Memory Corruption
