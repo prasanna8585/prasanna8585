@@ -69,6 +69,12 @@ Specializing in cloud infrastructure hardening and advanced threat detection.
 * **Official Advisory:** [GHSA-pj9q-pv45-xq8g](https://github.com/project-oak/oak/security/advisories/GHSA-pj9q-pv45-xq8g)
 * **Impact:** Discovered an integer overflow in the `setup_high_allocator` function within the stage0 bootloader firmware. An untrusted host or hypervisor could supply a maliciously crafted E820 memory map entry to trigger silent memory aliasing during heap initialization, leading to enclave memory corruption.
 
+### 🚀 Notable Security Discovery: Cross-Session State Isolation in Google ADK-JS
+* **Project:** Google Agent Development Kit for JavaScript (`google/adk-js`)
+* **Vulnerability:** Cross-Session Data Leakage / Improper Isolation
+* **Official Advisory:** [PR #887](https://github.com/google/adk-js/pull/887)
+* **Impact:** Identified a sandboxing flaw in `ContainerCodeExecutor` where a single Docker container was reused across every session served by a long-lived agent instance instead of being isolated per session. This allowed files, environment variables, and background processes from one session to leak into a completely unrelated session's code execution. Fixed by introducing per-session container tracking keyed on `(appName, userId, session.id)`, restoring full isolation between sessions.
+
 ### 🚀 Notable Security Discovery: FFmpeg MOV Demuxer `iinf`/`infe` Size Validation
 * **Project:** FFmpeg (`FFmpeg/FFmpeg`)
 * **Vulnerability:** Defense-in-Depth Size Budget Validation / Input Bounds Check
