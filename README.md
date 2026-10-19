@@ -69,6 +69,12 @@ Specializing in cloud infrastructure hardening and advanced threat detection.
 * **Official Advisory:** [GHSA-pj9q-pv45-xq8g](https://github.com/project-oak/oak/security/advisories/GHSA-pj9q-pv45-xq8g)
 * **Impact:** Discovered an integer overflow in the `setup_high_allocator` function within the stage0 bootloader firmware. An untrusted host or hypervisor could supply a maliciously crafted E820 memory map entry to trigger silent memory aliasing during heap initialization, leading to enclave memory corruption.
 
+### 🚀 Notable Security Discovery: Google ADK-Python Bigtable View Parameter State Isolation Flaw
+* **Project:** Google ADK for Python (`google/adk-python`)
+* **Vulnerability:** Caller-Writable State Parameter Pollution / Unauthorized Parameter Resolution
+* **Official Advisory:** [Pull Request #7132](https://github.com/google/adk-python/pull/7132) (Commit `57e8bc6`)
+* **Impact:** Identified a security flaw where Bigtable integration logic resolved view parameters directly from caller-writable state without proper validation or isolation. This permitted untrusted input or malicious payload injection via agent state parameters to manipulate view resolution, potentially leading to unauthorized data access, parameter tampering, or unintended database interaction in multi-tenant or agent-driven workflows. Fixed in PR #7132 by stripping caller-writable state resolution for sensitive view configurations.
+
 ### 🚀 Notable Security Discovery: Cross-Session State Isolation in Google ADK-JS
 * **Project:** Google Agent Development Kit for JavaScript (`google/adk-js`)
 * **Vulnerability:** Cross-Session Data Leakage / Improper Isolation
