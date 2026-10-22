@@ -69,6 +69,12 @@ Specializing in cloud infrastructure hardening and advanced threat detection.
 * **Official Advisory:** [GHSA-pj9q-pv45-xq8g](https://github.com/project-oak/oak/security/advisories/GHSA-pj9q-pv45-xq8g)
 * **Impact:** Discovered an integer overflow in the `setup_high_allocator` function within the stage0 bootloader firmware. An untrusted host or hypervisor could supply a maliciously crafted E820 memory map entry to trigger silent memory aliasing during heap initialization, leading to enclave memory corruption.
 
+### 🚀 Notable Security Discovery: Google ADK-Java Session Ownership Authorization Flaw
+* **Project:** Google ADK for Java (`google/adk-java`)
+* **Vulnerability:** Missing Authorization / Insecure Direct Object Reference (IDOR) / Session Takeover
+* **Official Advisory:** [Pull Request #1435](https://github.com/google/adk-java/pull/1435)
+* **Impact:** Identified an authorization bypass in `VertexAiSessionService.listEvents` where session event retrieval lacked proper session ownership verification. This enabled an Insecure Direct Object Reference (IDOR) vulnerability, allowing authenticated actors to query or inspect event streams of arbitrary, unauthorized user sessions. Fixed in PR #1435 by strictly enforcing session ownership checks prior to returning session history and event data.
+
 ### 🚀 Notable Security Discovery: Google ADK-Python Bigtable View Parameter State Isolation Flaw
 * **Project:** Google ADK for Python (`google/adk-python`)
 * **Vulnerability:** Caller-Writable State Parameter Pollution / Unauthorized Parameter Resolution
